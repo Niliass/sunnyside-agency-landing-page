@@ -1,0 +1,181 @@
+@use "../abstracts/" as *;
+
+.transform,
+.stand {
+  @include flex(center, null, column-reverse, null);
+  &__info {
+    display: grid;
+    place-items: center;
+    flex: 1;
+  }
+  &__container {
+    @include flex(null, center, column, 1.5rem);
+    text-align: center;
+    padding: clamp(3rem, 15vw, 10rem) 1rem;
+    max-width: 520px;
+    @include media($md) {
+      gap: 2rem;
+      text-align: left;
+      align-items: flex-start;
+      padding: 3rem 1rem 3rem 3rem;
+    }
+  }
+  &__title {
+    font-size: clamp(2rem, 5vw, 2.68rem);
+    color: $v-d-desaturated-blue;
+  }
+  &__desc {
+    color: $grayish-blue;
+    max-width: 400px;
+  }
+  &__img {
+    width: 100%;
+    &--desk {
+      display: none;
+    }
+    &--mob {
+      width: 450px;
+      margin: auto;
+    }
+    @include media($md) {
+      display: flex;
+      flex: 1;
+      &--desk {
+        display: block;
+      }
+      &--mob {
+        display: none;
+      }
+    }
+  }
+}
+.transform {
+  @include media($md) {
+    flex-direction: row;
+  }
+  &__img {
+    background-color: hsl(50deg 100% 50%);
+  }
+}
+.stand {
+  @include media($md) {
+    flex-direction: row-reverse;
+  }
+  &__img {
+    background-color: hsl(7deg 97% 70%);
+  }
+}
+
+.fruits {
+  @include media($md) {
+    display: flex;
+  }
+}
+.graphic,
+.photography {
+  @include flex(center, flex-end, null, null);
+  position: relative;
+  &__info {
+    display: grid;
+    gap: 1.5rem;
+    position: absolute;
+    text-align: center;
+    max-width: 400px;
+    padding-inline: 1rem;
+    padding-bottom: 3rem;
+  }
+  &__title {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+  }
+  &__img {
+    &--desk {
+      display: none;
+    }
+    @include media($sm) {
+      &--desk {
+        display: block;
+      }
+      &--mob {
+        display: none;
+      }
+    }
+  }
+}
+.graphic__info {
+  color: darken($d-desaturated-cyan, 4%);
+}
+.photography__info {
+  color: $d-blue;
+}
+.testimonials {
+  display: grid;
+  gap: 4rem;
+  text-align: center;
+  padding-block: 3rem;
+  background-color: rgb($grayish-blue, 5%);
+  @include media($md) {
+    padding-block: 8rem;
+    gap: 5rem;
+  }
+  &__title {
+    font: {
+      weight: 700;
+      size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+    color: $grayish-blue;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  &__clients {
+    @include flex(center, null, null, 3rem);
+    flex-wrap: wrap;
+    @include media($xl) {
+      gap: 0;
+    }
+  }
+  &__client {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    max-width: 380px;
+    &__img {
+      width: 70px;
+      border-radius: 50%;
+    }
+    &__content {
+      color: $v-d-grayish-blue;
+      padding-inline: 2rem;
+    }
+    &__name {
+      color: $v-d-desaturated-blue;
+      font-size: 1rem;
+    }
+    &__job {
+      color: $grayish-blue;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  .row {
+    @include media($md) {
+      display: flex;
+    }
+  }
+  &__img {
+    &--desk {
+      display: none;
+    }
+    @include media($md) {
+      &--desk {
+        display: block;
+      }
+      &--mob {
+        display: none;
+      }
+    }
+  }
+}

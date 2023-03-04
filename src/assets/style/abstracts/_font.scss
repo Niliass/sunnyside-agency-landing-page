@@ -1,0 +1,14 @@
+$text-font: "Barlow", sans-serif;
+
+$headings-font: "Fraunces", serif;
+$headings-100: 700;
+$headings-200: 900;
+
+$space-3xs-2xs: clamp(0.31rem, calc(0.22rem + 0.45vw), 0.63rem);
+$space-2xs-xs: clamp(0.56rem, calc(0.46rem + 0.54vw), 0.94rem);
+$space-xs-s: clamp(0.88rem, calc(0.77rem + 0.54vw), 1.25rem);
+$space-s-m: clamp(1.13rem, calc(0.91rem + 1.07vw), 1.88rem);
+$space-m-l: clamp(1.69rem, calc(1.46rem + 1.16vw), 2.5rem);
+$space-l-xl: clamp(2.25rem, calc(1.82rem + 2.14vw), 3.75rem);
+$space-xl-2xl: clamp(3.38rem, calc(2.91rem + 2.32vw), 5rem);
+$space-2xl-3xl: clamp(4.5rem, calc(3.64rem + 4.29vw), 7.5rem);

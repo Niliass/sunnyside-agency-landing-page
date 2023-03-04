@@ -1,0 +1,46 @@
+@use "../abstracts/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: {
+    family: $headings-font;
+    weight: $headings-200;
+  }
+}
+p {
+  font-family: $text-font;
+  line-height: 1.6;
+}
+.container {
+  padding-inline: $space-m-l;
+}

@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+
+.nav__btn {
+  &.active {
+    opacity: 0.5;
+  }
+  @include media($md) {
+    display: none;
+  }
+}
+.contact__btn {
+  font-family: $headings-font;
+  text-transform: uppercase;
+  color: $v-d-desaturated-blue;
+  padding: 1rem 1.5rem;
+  margin-block: 1rem;
+  background-color: $yellow;
+  border-radius: 25px;
+  @include trans;
+  &:hover {
+    background-color: rgb($yellow, 0.6);
+  }
+  @include media($md) {
+    font-size: 0.9rem;
+    background: $white;
+    margin: 0;
+    &:hover {
+      background-color: rgb($white, 0.3);
+      color: $white;
+    }
+  }
+}
+
+%btn-shap {
+  display: grid;
+  place-items: center;
+  font-family: $headings-font;
+  font-weight: $headings-200;
+  color: $v-d-desaturated-blue;
+  text-transform: uppercase;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    z-index: -1;
+    width: calc(100% + 15px);
+    height: 10px;
+    border-radius: 15px;
+    @include trans;
+  }
+}
+
+.transform__btn {
+  @extend %btn-shap;
+  @include hover-bg($yellow);
+}
+
+.stand__btn {
+  @extend %btn-shap;
+  @include hover-bg($soft-red);
+}

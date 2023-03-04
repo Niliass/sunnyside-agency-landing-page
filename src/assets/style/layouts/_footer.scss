@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+footer {
+  background-color: lighten($d-desaturated-cyan, 45%);
+  padding-block: 4rem;
+  .#{&}__container {
+    display: grid;
+    place-items: center;
+    gap: 2.5rem;
+    color: $d-desaturated-cyan;
+    max-width: 400px;
+    margin: auto;
+  }
+  .#{&}__logo {
+    width: 160px;
+    img {
+      width: 100%;
+    }
+  }
+  .#{&}__nav {
+    width: 100%;
+    &__links {
+      @include flex(space-around, null, null, null);
+    }
+    &__link {
+      font: {
+        family: $text-font;
+        size: 1.1rem;
+      }
+    }
+  }
+  .social__links {
+    @include flex(null, null, null, 2rem);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+}
